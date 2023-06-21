@@ -26,8 +26,12 @@ class AIBloc extends Bloc<AIEvent, AIState> {
     final message = event.message;
     final responseStream = aiRepository.chat(message);
     await emit.forEach(responseStream, onData: (e) {
-      if (e.finishReason == null) {
-        return AIAnswering(e.delta.content!);
+      if (e != null && e.finishReason == null) {
+        if (e.delta.content != null) {
+          return AIAnswering(e.delta.content!);
+        } else {
+          return AIProcessing();
+        }
       } else {
         return AIIdle();
       }

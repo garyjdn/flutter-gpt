@@ -7,9 +7,12 @@ class AIRepository {
 
   AIRepository(this.openAIData);
 
-  Stream<OpenAIStreamChatCompletionChoiceModel> chat(String message) {
+  Stream<OpenAIStreamChatCompletionChoiceModel?> chat(String message) {
     return openAIData.chatStream(message).map((e) {
-      return e.choices.first;
+      if (e.choices.isNotEmpty) {
+        return e.choices.first;
+      }
+      return null;
     });
   }
 }
