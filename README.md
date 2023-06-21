@@ -1,16 +1,10 @@
 # flutter_gpt
 
-A new Flutter project.
+Flutter & Chat-GPT Integration.
 
 ## Getting Started
+This project use flutter bloc, the data from openAI is streamed into the app using flutter Stream.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Go to lib directory, copy the env.dart file and fill in the OPEN_AI_API_KEY
+2. go to terminal, run flutter pub get
+3. run the app
